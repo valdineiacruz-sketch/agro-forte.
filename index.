@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechBlog</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#0f172a;
+    color:#fff;
+}
+
+header{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    padding:80px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:1.2rem;
+    opacity:.9;
+}
+
+nav{
+    background:#111827;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#60a5fa;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cbd5e1;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111827;
+    margin-top:40px;
+}
+
+#contador{
+    margin-top:15px;
+    color:#93c5fd;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>TechBlog</h1>
+    <p>Tecnologia, IA, Programação e Inovação</p>
+    <div id="contador"></div>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#">Artigos</a>
+    <a href="#">Projetos</a>
+    <a href="#">Contato</a>
+</nav>
+
+<div class="container">
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?1" alt="">
+            <div class="card-content">
+                <h2>Inteligência Artificial</h2>
+                <p>Conheça as tendências mais recentes da IA em 2026.</p>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?2" alt="">
+            <div class="card-content">
+                <h2>Desenvolvimento Web</h2>
+                <p>Aprenda HTML, CSS e JavaScript na prática.</p>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/600/400?3" alt="">
+            <div class="card-content">
+                <h2>GitHub Pages</h2>
+                <p>Publique seus projetos gratuitamente na internet.</p>
+                <a href="#" class="btn">Ler Artigo</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 TechBlog</p>
+</footer>
+
+<script>
+let visitas = localStorage.getItem("visitas") || 0;
+visitas++;
+localStorage.setItem("visitas", visitas);
+
+document.getElementById("contador").innerHTML =
+"👥 Visitante nº " + visitas;
+</script>
+
+</body>
+</html>
